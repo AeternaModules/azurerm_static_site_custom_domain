@@ -1,3 +1,7 @@
+output "static_site_custom_domains_id" {
+  description = "Map of id values across all static_site_custom_domains, keyed the same as var.static_site_custom_domains"
+  value       = { for k, v in azurerm_static_site_custom_domain.static_site_custom_domains : k => v.id }
+}
 output "static_site_custom_domains_domain_name" {
   description = "Map of domain_name values across all static_site_custom_domains, keyed the same as var.static_site_custom_domains"
   value       = { for k, v in azurerm_static_site_custom_domain.static_site_custom_domains : k => v.domain_name }
